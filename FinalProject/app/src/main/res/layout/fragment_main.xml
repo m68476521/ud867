@@ -22,7 +22,17 @@
         android:onClick="tellJoke"
         android:text="@string/button_text"
 
-        />
+        android:id="@+id/button2"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button2"
+
+        android:layout_marginTop="20dp"
+        android:onClick="sendJoke"
+        android:text="@string/button_joke"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
