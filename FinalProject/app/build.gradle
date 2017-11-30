@@ -35,5 +35,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:11.6.0'
     compile project(':JokeProvider')
     compile project(":myandroidlibrary")
-    compile 'com.android.support:support-annotations:27.0.1'
+    compile 'com.android.support:support-annotations:27.0.2'
 }

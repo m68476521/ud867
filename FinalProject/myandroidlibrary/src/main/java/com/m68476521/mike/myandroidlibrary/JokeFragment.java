@@ -1,6 +1,5 @@
 package com.m68476521.mike.myandroidlibrary;
 
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -9,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.m68476521.mike.myandroidlibrary.databinding.FragmentJokeBinding;
-
 /**
  * Created by mike on 11/28/17.
  */
@@ -18,7 +15,6 @@ import com.m68476521.mike.myandroidlibrary.databinding.FragmentJokeBinding;
 public class JokeFragment extends Fragment {
     private static final String ARG_JOKE = "joke";
     private String joke = "";
-    private FragmentJokeBinding Binding;
 
     public static JokeFragment newInstance(String id) {
         Bundle args = new Bundle();
@@ -39,12 +35,11 @@ public class JokeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_joke, container, false);
         joke = getArguments().getString(ARG_JOKE);
-        Log.d("MIKE3", joke);
-        Binding = DataBindingUtil.inflate(inflater, R.layout.fragment_joke, container, false);
-        Binding.libraryTextViewJoke.setText(joke);
-        return Binding.getRoot();
+        TextView textJoke = view.findViewById(R.id.libraryTextViewJoke);
+        textJoke.setText(joke);
+        return view;
     }
 }
