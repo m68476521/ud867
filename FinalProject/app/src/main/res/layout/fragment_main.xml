@@ -32,7 +32,18 @@
 
         android:layout_marginTop="20dp"
         android:onClick="sendJoke"
-        android:text="@string/button_joke"/>
+        android:text="@string/button_joke"
+        android:id="@+id/button3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="29dp"
+        android:onClick="callBackEnd"
+        android:text="@string/button_call_backend"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
