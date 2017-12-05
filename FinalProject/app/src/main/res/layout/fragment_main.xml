@@ -36,13 +36,14 @@
         android:id="@+id/button3"/>
 
     <Button
+        android:id="@+id/button_call_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_alignParentStart="true"
         android:layout_below="@+id/button3"
         android:layout_marginTop="29dp"
-        android:onClick="callBackEnd"
+
         android:text="@string/button_call_backend"/>
 
     <com.google.android.gms.ads.AdView

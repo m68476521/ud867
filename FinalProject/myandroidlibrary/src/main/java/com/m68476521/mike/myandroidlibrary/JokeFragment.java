@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class JokeFragment extends Fragment {
     private static final String ARG_JOKE = "joke";
-    private String joke = "";
+    public String joke = "";
 
     public static JokeFragment newInstance(String id) {
         Bundle args = new Bundle();
