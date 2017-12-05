@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 //        Joker joker = new Joker();
 //        Intent intent = JokeActivity.newIntent(this,joker.getJoker());
 //        startActivity(intent);
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
     }
 
 
