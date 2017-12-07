@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -19,6 +20,7 @@ import com.m68476521.mike.myandroidlibrary.JokeActivity;
 public class MainActivityFragment extends Fragment {
     public boolean testingFlag = false;
     public String joke = null;
+    ProgressBar progressBar = null;
     private InterstitialAd mInterstitialAd;
 
 
@@ -43,11 +45,14 @@ public class MainActivityFragment extends Fragment {
         mInterstitialAd = new InterstitialAd(getContext());
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        progressBar =  root.findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
 
         ButtonCallEnd = root.findViewById(R.id.button_call_end);
         ButtonCallEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 if (mInterstitialAd.isLoaded()) {
                     mInterstitialAd.show();
                 } else {
@@ -68,6 +73,7 @@ public class MainActivityFragment extends Fragment {
             Context context = getActivity();
             Intent intent = JokeActivity.newIntent(context,joke);
             context.startActivity(intent);
+            progressBar.setVisibility(View.GONE);
         }
     }
 }

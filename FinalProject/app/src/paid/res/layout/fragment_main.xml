@@ -41,4 +41,12 @@
         android:layout_marginTop="29dp"
         android:text="@string/button_call_backend"/>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/button_call_end"/>
+
 </RelativeLayout>
